@@ -1,0 +1,90 @@
+@import "../../.././utils/mixin/mixin";
+@import "../../.././utils/mixin/variable";
+.accessories {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  display: flex;
+  @include minWidth(576px) {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  @include minWidth(996px) {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  .item {
+    margin-bottom: 8rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    &:hover {
+      span {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .action {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &__thumb {
+      margin-bottom: 3rem;
+      a {
+        color: #1696e7;
+        text-decoration: none;
+        background-color: transparent;
+        &:hover {
+          img {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+    &__content {
+      position: relative;
+      h5 {
+        font-size: 18px;
+        text-transform: uppercase;
+        color: #37303a;
+        line-height: 1;
+        margin-bottom: 5px;
+        &:hover {
+          color: $span-color;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+          background-color: transparent;
+        }
+      }
+      span {
+        font-size: 14px;
+        font-weight: 500;
+        color: #6c6c6c;
+        display: block;
+        transition: 0.3s linear;
+      }
+      button.action {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        visibility: hidden;
+        font-size: 14px;
+        font-weight: 500;
+        color: #e9a301;
+        transition: all 0.3s ease-out 0s;
+        text-decoration: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

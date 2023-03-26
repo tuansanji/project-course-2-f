@@ -1,0 +1,180 @@
+@import "../../.././utils/mixin/mixin";
+@import "../../.././utils/mixin/variable";
+
+.listShoppingChild {
+  padding: 2.5rem;
+  opacity: 0;
+  visibility: hidden;
+  &::before {
+    content: "";
+    height: 8rem;
+    top: -5rem;
+    opacity: 0;
+    position: absolute;
+    width: 100rem;
+  }
+  @include minWidth(1200px) {
+    width: 100rem;
+    min-height: 50rem;
+  }
+  @include maxWidth(900px) {
+    @include size(60rem);
+  }
+  background: #1c1121;
+  position: absolute;
+  right: -40rem;
+  color: #d4d4d4;
+  top: 165%;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  border-top: 1px solid #333;
+  // transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  transform: translateY(0px);
+  box-shadow: 0px 12px 24px 0px rgb(120 120 120 / 30%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__list {
+    flex-grow: 2;
+    ul {
+      // list-style: none;
+      // display: flex;
+      // flex-wrap: wrap;
+      // justify-content: space-around;
+      .slick-slider.slick-initialized {
+        // margin: 0 3rem;
+        .slick-list {
+          margin: 0 3rem;
+        }
+        .slick-slide.slick-active {
+          margin-right: 2rem;
+          margin-top: 1rem;
+          width: 25rem;
+          max-width: 30rem;
+          & > * {
+            background-color: rgba(0, 0, 0, 0.4);
+          }
+        }
+      }
+
+      p#title__nothing {
+        position: absolute;
+        @include centerAbsolute(both);
+        top: 30%;
+        font-size: 2rem;
+      }
+      // .slick-slide.slick-active > div {
+      //   margin: 1rem;
+      // }
+      .slick-slide {
+        // display: flex !important;
+        // max-width: 70%;
+        // // max-width: 25%;
+        // background-color: #333;
+        // flex-direction: row;
+
+        .child-cart {
+          display: flex;
+          .img {
+            max-width: 10rem;
+            max-height: 10rem;
+            img {
+              // width: 100%;
+            }
+          }
+          .content {
+            padding-left: 15px;
+            text-align: left;
+            padding-right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            p {
+              color: $span-color;
+              text-align: center;
+              font-size: 2rem;
+            }
+          }
+          .icon {
+            margin-top: 4rem;
+            position: relative;
+            right: 1rem;
+            &:hover {
+              svg {
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__result {
+    border-top: 1px solid #473151;
+    padding-top: 25px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    color: $text-color;
+    .total {
+      display: flex;
+      flex-direction: column;
+      font-size: 3rem;
+      padding-top: 2rem;
+      .affter {
+        margin-top: 2rem;
+      }
+      span.left {
+        color: $span-color;
+      }
+      span.right {
+        color: #d4d4d4;
+      }
+    }
+    .btn {
+      button {
+        cursor: pointer;
+        border: none;
+        background-color: $span-color;
+        color: #1c1121;
+        width: max-content;
+        display: inline-block;
+        font-family: Poppins;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 15px;
+        margin: 3rem 0 0 0;
+        padding: 20px 35px;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        transform: skew(-20deg);
+        @include maxWidth(768px) {
+          position: relative;
+          left: -6rem;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          right: -13px;
+          top: 0;
+          height: 100%;
+          width: 5px;
+          z-index: 1;
+          opacity: 1;
+          background-image: none;
+          bottom: 0;
+          border-radius: 0;
+          left: auto;
+          background-color: #e4a101;
+          transition: 0.5s linear;
+        }
+        &:hover::before {
+          right: 0;
+        }
+      }
+    }
+  }
+}

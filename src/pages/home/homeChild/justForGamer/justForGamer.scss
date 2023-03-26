@@ -1,0 +1,186 @@
+@import "../../../../utils/mixin/_mixin.scss";
+@import "../../../../utils/mixin/_variable.scss";
+
+.just-for-gamer {
+  background-image: url("https://themebeyond.com/html/geco/Geco/img/bg/just_gamer_bg.jpg");
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  z-index: 1;
+  display: block;
+  padding-top: 11rem;
+  box-sizing: border-box;
+  margin-top: 2rem;
+  &::before {
+    @include maxWidth(930px) {
+      display: none;
+    }
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-image: url("https://themebeyond.com/html/geco/Geco/img/images/gamers_bg_conve01.png");
+    width: 467px;
+    height: 169px;
+    margin: 0 auto;
+    top: -4px;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  &::after {
+    @include maxWidth(930px) {
+      display: none;
+    }
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-image: url("https://themebeyond.com/html/geco/Geco/img/images/gamers_bg_conve02.png");
+    width: 420px;
+    height: 152px;
+    margin: 0 auto;
+    bottom: -20px;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  .just-for-gamer__container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    @include minWidth(1200px) {
+      max-width: 123rem;
+    }
+    .row {
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      .row-left {
+        max-width: 41.666667%;
+        position: relative;
+        @include maxWidth(930px) {
+          max-width: 100%;
+          margin: 0 auto;
+          padding: 2rem;
+        }
+        .left__title {
+          padding-bottom: 35px;
+          position: relative;
+          margin-bottom: 7rem;
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 270px;
+            height: 13px;
+            background-repeat: no-repeat;
+            background-image: url("https://themebeyond.com/html/geco/Geco/img/images/title_bar03.png");
+          }
+          h2 {
+            color: #fff;
+            span {
+              color: $span-color;
+            }
+          }
+          p {
+            color: #cbcbcb;
+          }
+        }
+        .left__list {
+          ul {
+            li {
+              margin-bottom: 40px;
+              padding-right: 20px;
+              overflow: hidden;
+              display: list-item;
+              list-style: none;
+              .list-icon {
+                float: left;
+                background-image: url("https://themebeyond.com/html/geco/Geco/img/bg/gamer_list_icon_bg.jpg");
+                width: 97px;
+                height: 97px;
+                text-align: center;
+                line-height: 85px;
+                display: block;
+                border: 6px solid #333240;
+                margin-right: 25px;
+                transition: 0.3s linear;
+                cursor: pointer;
+                &:hover {
+                  border-color: $span-color;
+                }
+                img {
+                  vertical-align: middle;
+                }
+              }
+              .list-content {
+                position: relative;
+                top: 5px;
+                overflow: hidden;
+                h5 {
+                  font-size: 1.8rem;
+                  font-family: "Poppins", sans-serif;
+                  margin-bottom: 10px;
+                  font-weight: 800;
+                  color: #fff;
+                }
+                p {
+                  font-size: 1.5rem;
+                  color: #cbcbcb;
+                }
+              }
+            }
+          }
+        }
+      }
+      .row-right {
+        @include minWidth(930px) {
+          display: block !important;
+          flex: 0 0 58.333333%;
+          max-width: 58.333333%;
+          position: relative;
+        }
+
+        @include maxWidth(930px) {
+          display: none !important;
+        }
+        .right__img {
+          position: absolute;
+          width: 100%;
+          top: -83px;
+          right: 0;
+          .img__animations {
+            position: absolute;
+            bottom: 215px;
+            left: 145px;
+            z-index: -1;
+            &_child-2 {
+              position: absolute;
+              top: 46px;
+              right: -67px;
+              animation: children-2 5s linear infinite;
+              @keyframes children-2 {
+                0% {
+                  transform: rotate(0deg);
+                }
+                100% {
+                  transform: rotate(360deg);
+                }
+              }
+            }
+          }
+          .img__chart {
+            position: absolute;
+            right: 0;
+            top: 7rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@import "../../.././utils/mixin/mixin";
+@import "../../.././utils/mixin/variable";
+
+.bread-crumb {
+  background-image: url("https://themebeyond.com/html/geco/Geco/img/bg/breadcrumb_bg.jpg");
+  padding-top: 20rem;
+  padding-bottom: 20rem;
+  background-position: center;
+  background-size: cover;
+  &__container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+
+    @include minWidth(1200px) {
+      max-width: 1230px;
+    }
+    h2 {
+      color: #fff;
+      font-size: 7rem;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      line-height: 0.8;
+    }
+    span {
+      color: $span-color;
+    }
+    .address {
+      margin-top: 5rem;
+      ol {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 0;
+        margin-bottom: 0;
+        list-style: none;
+        background-color: transparent;
+        border-radius: 0;
+        justify-content: center;
+        li {
+          text-transform: uppercase;
+          font-weight: 600;
+          list-style: none;
+          &:hover {
+            a {
+              color: $span-color;
+            }
+          }
+          + li::before {
+            display: inline-block;
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+            color: #fff;
+            content: "\f101";
+            font-weight: 600;
+            font-family: "Font Awesome 5 Free";
+            font-size: 12px;
+          }
+          a {
+            color: $text-color;
+            text-decoration: none;
+          }
+          &:last-child {
+            a {
+              color: #f2a900;
+            }
+          }
+        }
+      }
+    }
+  }
+}

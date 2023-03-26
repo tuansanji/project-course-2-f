@@ -1,0 +1,92 @@
+@import "../../utils/mixin/_mixin.scss";
+@import "../../utils/mixin/_variable.scss";
+
+.header {
+  height: 45px;
+  width: 100%;
+  color: $text-color;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.25rem;
+  padding: 0 6rem;
+  text-align: left;
+  background-color: $bgr;
+  display: flex;
+  &__left {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    width: 50%;
+    @include maxWidth($tablet-width) {
+      display: none;
+    }
+    p {
+      color: #a5a5a5;
+      font-family: Poppins;
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 2.8rem;
+      text-align: left;
+    }
+    span {
+      margin: 0 1rem;
+      width: 6rem;
+      color: #1c1121;
+      display: inline-block;
+      font-size: 1.8rem;
+      font-weight: 900;
+      line-height: 2.7rem;
+      padding: 0.9rem 2.5rem;
+      text-align: left;
+      background-color: $span-color;
+      transform: skew(-20deg);
+    }
+  }
+  &__right {
+    width: 50%;
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 500;
+    justify-content: flex-end;
+    line-height: 2.25rem;
+    text-align: left;
+    ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        margin: 0 0.5rem;
+      }
+    }
+    span {
+      color: $span-color;
+      display: inline-block;
+      margin: 0 1rem;
+    }
+    a {
+      display: flex;
+      color: #a5a5a5;
+      text-decoration: none;
+      .icon {
+        color: $span-color;
+        margin: 0 0.5rem;
+      }
+      &:hover {
+        color: $span-color;
+        .icon {
+          color: #0acf4b;
+        }
+      }
+    }
+    @include maxWidth($tablet-width) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  @include maxWidth($tablet-width) {
+    padding: 0;
+    margin: 0 auto;
+  }
+}

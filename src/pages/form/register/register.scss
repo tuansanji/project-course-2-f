@@ -1,0 +1,115 @@
+.signup {
+  overflow: auto;
+  z-index: 10000;
+  max-width: 50%;
+  min-width: 30rem;
+  position: relative;
+  padding-top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.6rem;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #fff;
+  &-heading {
+    width: 100%;
+    margin: 2rem auto;
+    text-align: center;
+  }
+  &-or {
+    color: chartreuse;
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  &-icon {
+    padding: 0 5rem;
+    display: flex;
+    justify-content: space-around;
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      cursor: pointer;
+      &:hover {
+        background-color: #00aefd;
+      }
+      svg {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+  &-input {
+    width: 100%;
+    height: 5.5rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    transition: 0.25 ease;
+    padding: 0 2rem;
+    font-size: 1.6rem;
+    outline: none;
+    &:focus {
+      border-color: #00aefd;
+    }
+    &:not(:placeholder-shown) + .signup-label,
+    &:focus + .signup-label {
+      top: 0;
+      left: 1.1rem;
+      padding: 0 1rem;
+      background-color: #fff;
+      color: #2aa2da;
+      display: inline-block;
+    }
+  }
+  &-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2.1rem;
+    user-select: none;
+    color: #999;
+    transition: 0.25s ease;
+  }
+  .form__signup {
+    padding: 1rem 2rem;
+    .form-group {
+      position: relative;
+      margin: 2rem 0;
+      border: none;
+      p.error {
+        position: relative;
+        top: 1rem;
+        color: red;
+      }
+    }
+    .form__submit {
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      background-color: #1d13de;
+      width: 100%;
+      font-size: 1.6rem;
+      padding: 2rem;
+      margin-top: 3rem;
+      outline: none;
+      border: none;
+      text-align: center;
+      &:hover {
+        background-color: #00aefd;
+      }
+    }
+  }
+  &-already {
+    margin: 0 auto;
+    padding: 2rem;
+    a {
+      text-decoration: none;
+      font-size: 1.8rem;
+      color: #00aefd;
+    }
+  }
+}

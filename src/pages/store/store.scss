@@ -1,0 +1,26 @@
+@import "../../utils/mixin/_mixin.scss";
+@import "../../utils/mixin/_variable.scss";
+.container__store {
+  background-color: #ffffff;
+  .store__shop {
+    padding-top: 12rem;
+    padding-bottom: 9rem;
+    .container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      color: #d4d4d4;
+      @include minWidth(1200px) {
+        max-width: 1230px;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+    }
+  }
+}

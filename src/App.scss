@@ -1,0 +1,29 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "poppins", sans-serif;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: block;
+  &__container {
+    position: relative;
+    top: 9.4rem;
+    background-color: #f6f6f6;
+
+    width: 100%;
+    font-size: 1.6rem;
+    padding-bottom: 8rem;
+    .toast__message {
+      top: 12rem;
+      z-index: 900000;
+    }
+  }
+}

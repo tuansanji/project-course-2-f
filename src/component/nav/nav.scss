@@ -1,0 +1,310 @@
+@import "../../utils/mixin/_mixin.scss";
+@import "../../utils/mixin/_variable.scss";
+
+.nav {
+  text-transform: capitalize;
+  display: flex;
+  width: 100%;
+  height: 10rem;
+  will-change: opacity;
+  position: absolute;
+  background-image: url("https://themebeyond.com/html/geco/Geco/img/bg/header_bg.jpg");
+  background-position: 100% 50%;
+  background-size: cover;
+  color: $text-color;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 22.5px;
+  padding: 28px 30px;
+  text-align: left;
+  z-index: 99999;
+  transition: all 0.5s ease;
+
+  animation: identifier 1s linear;
+  animation-play-state: paused;
+  @keyframes identifier {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  &__close {
+    display: none;
+    @include size(4.4rem);
+    text-align: center;
+    line-height: 4.4rem;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+    &:hover {
+      background-color: $span-color;
+    }
+    @include maxWidth(800px) {
+      display: inline-block;
+      position: absolute;
+      right: 1rem;
+    }
+  }
+  &__logo {
+    height: 100%;
+    display: flex;
+  }
+  &__menu {
+    height: 44px;
+    // flex-grow: 1;
+    padding: 0 10rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    line-height: 1.4rem;
+    font-size: 1.4rem;
+    font-family: Oxanium;
+
+    .menu__item {
+      position: relative;
+
+      &:hover .menu__item--child {
+        opacity: 1;
+        visibility: visible;
+        color: $text-color;
+      }
+
+      &--child {
+        color: $text-color;
+        padding: 1rem 0;
+        transform: skew(20deg);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 100%;
+        left: 30%;
+        min-width: 100%;
+        width: max-content;
+        max-height: max-content;
+
+        background-color: $bgr;
+        font-size: 1.4rem;
+        text-transform: capitalize;
+        border-top: 1px solid #333;
+        transition: 0.24s linear;
+        cursor: pointer;
+        color: $text-color;
+        ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          li {
+            transform: skew(0);
+            width: 100%;
+
+            a {
+              color: $text-color;
+            }
+            &:hover {
+              background-color: $span-color;
+            }
+          }
+        }
+      }
+    }
+
+    ul.ul__nav {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      li {
+        transition: all 0.6s ease;
+        height: 100%;
+
+        @include flex(center, center);
+        transform: skew(-20deg);
+        &:hover {
+          background-color: $span-color;
+          .a1 {
+            color: #1c1121;
+          }
+        }
+        a {
+          @include size(100%);
+          padding: 15px 23px;
+          color: $text-color;
+          text-decoration: none;
+        }
+      }
+    }
+
+    #store-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 3rem;
+      cursor: pointer;
+      position: relative;
+      & > span {
+        @include size(2rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        top: 10%;
+        right: -66%;
+        background-color: $span-color;
+        border-radius: 50%;
+      }
+      &:hover {
+        .listShoppingChild {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+    @include maxWidth(800px) {
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 80%;
+      left: 0;
+      background-color: #131014;
+      align-items: center;
+      height: 50vh;
+      animation: openNav 1s linear;
+      box-shadow: #ffffff;
+      @keyframes openNav {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      ul {
+        position: absolute;
+        width: 60%;
+        top: 0;
+        flex-direction: column;
+        li {
+          width: 100%;
+        }
+      }
+      #store-icon {
+        display: none;
+      }
+    }
+
+    &.nav__open {
+      display: none;
+
+      @include minWidth(768px) {
+        display: flex;
+      }
+    }
+  }
+
+  &__language {
+    @include flex(row, center, center);
+    font-size: 14px;
+    margin: 0 2rem;
+
+    span {
+      margin: 0 0.4rem;
+      cursor: pointer;
+      &:hover {
+        color: $span-color;
+      }
+      &.language__active {
+        color: $span-color;
+      }
+    }
+    @include maxWidth(768px) {
+      position: absolute;
+      top: -3.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      // display: none;
+    }
+  }
+
+  img {
+    height: 100%;
+  }
+  .form__user {
+    position: absolute;
+    right: 2rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    letter-spacing: 0.2;
+    text-transform: capitalize;
+    color: #ffffff;
+    height: 3.6rem;
+    a {
+      img {
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1rem;
+      }
+    }
+    span {
+      color: $span-color;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  .form-group {
+    position: absolute;
+    right: 10px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    letter-spacing: 0.2;
+    text-transform: capitalize;
+    color: #ffffff;
+    height: 3.6rem;
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+      margin: 0 1rem;
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      &:hover {
+        background-color: $span-color;
+      }
+    }
+    @include maxWidth(1300px) {
+      display: none;
+    }
+  }
+  .active {
+    background-color: $span-color;
+    color: #1c1121;
+  }
+  .btn-backToTop {
+    background: #e4a101;
+    height: 40px;
+    width: 40px;
+    right: 50px;
+    bottom: 50px;
+    color: #1c1121;
+    text-align: center;
+    border-radius: 0;
+    font-size: 22px;
+    line-height: 38px;
+    cursor: pointer;
+    position: fixed;
+    top: 70%;
+    right: 2%;
+    z-index: 400;
+  }
+}
