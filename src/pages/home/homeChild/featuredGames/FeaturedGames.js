@@ -11,7 +11,7 @@ function FeaturedGames() {
   const [listGames, setListGames] = useState("");
   useEffect(() => {
     axios
-      .get("http://localhost:9000/games")
+      .get("https://sanji-course-2.onrender.com/games")
       .then((response) => setListGames(response.data));
   }, []);
   return (
